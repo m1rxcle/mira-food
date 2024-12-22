@@ -36,7 +36,7 @@ export const Stories: React.FC<Props> = ({ className }) => {
 
 	return (
 		<>
-			<Container className={cn("flex items-center justify-between gap-2 my-10 ", className)}>
+			<Container className={cn("sm:w-[90px] md:w-full sm:flex sm:items-center sm:justify-between sm:gap-1 md:gap-2 md:my-10", className)}>
 				{stories.length === 0 &&
 					[...Array(6)].map((_, index) => <div key={index} className="w-[200px] h-[250px] bg-gray-200 rounded-md animate-pulse" />)}
 
@@ -48,6 +48,7 @@ export const Stories: React.FC<Props> = ({ className }) => {
 						height={250}
 						width={200}
 						src={story.previewImageUrl}
+						alt="logo"
 					/>
 				))}
 

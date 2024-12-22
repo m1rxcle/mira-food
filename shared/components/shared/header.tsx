@@ -63,7 +63,7 @@ export const Header: React.FC<Props> = ({ hasCart = true, hasSearch = true, clas
 				</Link>
 
 				{hasSearch && (
-					<div className="mx-10 flex-1 ">
+					<div className="sm:hidden md:block md:mx-10 md:flex-1 ">
 						<SearchInput />
 					</div>
 				)}

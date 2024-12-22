@@ -19,7 +19,7 @@ export default async function Home({ searchParams }: { searchParams: GetSearchPa
 			<Container className="pb-14 mt-10">
 				<div className="flex gap-[80px]">
 					{/* Фильтрация */}
-					<div className="w-[250px]">
+					<div className="sm:hidden md:w-[250px] md:block">
 						<Suspense>
 							<Filters />
 						</Suspense>
