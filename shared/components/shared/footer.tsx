@@ -48,11 +48,11 @@ export const Footer: React.FC<Props> = ({ className }) => {
 					</div>
 					<div className="grid grid-cols-3 mb-20">
 						<div className="flex flex-col gap-3">
-							<h1 className="text-white text-2xl">294 408 440 рублей</h1>
+							<h1 className="text-white text-2xl">255 202 212 рублей</h1>
 							<p className="text-neutral-500 w-[280px]">выручка российской сети в этом мясяце. В прошлом - 8 635 402 120 рублей.</p>
 						</div>
 						<div className="flex flex-col gap-3">
-							<h1 className="text-white text-2xl">1181 пиццерия</h1>
+							<h1 className="text-white text-2xl">1 181 пиццерия</h1>
 							<p className="text-neutral-500 w-[280px]">в 24 странах, от Великобритании до Нигерии.</p>
 						</div>
 					</div>

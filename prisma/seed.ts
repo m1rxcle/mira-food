@@ -1,6 +1,7 @@
 import { Prisma } from "@prisma/client"
 import { categories, ingredients, products } from "./constans"
 import { prisma } from "./prisma-client"
+import { hashSync } from "bcrypt"
 
 const randomDecimalNumber = (min: number, max: number) => {
 	return Math.floor(Math.random() * (max - min) * 10 + min * 10) / 10
@@ -20,14 +21,14 @@ async function up() {
 			{
 				fullName: "User",
 				email: "user@test.ru",
-				password: "1111",
+				password: hashSync("111", 10),
 				role: "USER",
 				verified: new Date(),
 			},
 			{
 				fullName: "Admin",
 				email: "Admin1@test.ru",
-				password: "111",
+				password: hashSync("11111", 10),
 				role: "ADMIN",
 				verified: new Date(),
 			},
@@ -42,7 +43,7 @@ async function up() {
 
 	const pizza1 = await prisma.product.create({
 		data: {
-			name: "Пепперони фреш",
+			name: "Пепперони фреш 🍕",
 			imageUrl: "https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp",
 			categoryId: 1,
 			ingredients: {
@@ -53,7 +54,7 @@ async function up() {
 
 	const pizza2 = await prisma.product.create({
 		data: {
-			name: "Сырная",
+			name: "🍕 Сырная",
 			imageUrl: "https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp",
 			categoryId: 1,
 			ingredients: {
@@ -64,7 +65,7 @@ async function up() {
 
 	const pizza3 = await prisma.product.create({
 		data: {
-			name: "Чоризо фреш",
+			name: "🍕 Чоризо фреш ",
 			imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp",
 			categoryId: 1,
 			ingredients: {
@@ -75,7 +76,7 @@ async function up() {
 
 	const pizza4 = await prisma.product.create({
 		data: {
-			name: "Кола-барбекю",
+			name: "🍕 Кола-барбекю",
 			imageUrl: "https://media.dodostatic.net/image/r:584x584/11EF9050501F3FA690A64053F5F07626.avif",
 			categoryId: 1,
 			ingredients: {
@@ -86,7 +87,7 @@ async function up() {
 
 	const pizza5 = await prisma.product.create({
 		data: {
-			name: "Бефстроганов",
+			name: "🍕 Бефстроганов",
 			imageUrl: "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif",
 			categoryId: 1,
 			ingredients: {
@@ -97,7 +98,7 @@ async function up() {
 
 	const pizza6 = await prisma.product.create({
 		data: {
-			name: "Мясная с аджикой",
+			name: "🍕 Мясная с аджикой ",
 			imageUrl: "https://media.dodostatic.net/image/r:584x584/11EF438E93884BFEBFE79D11095AE2D4.avif",
 			categoryId: 1,
 			ingredients: {
@@ -185,6 +186,59 @@ async function up() {
 				connect: [{ id: 1 }, { id: 2 }, { id: 3 }],
 			},
 		},
+	})
+	await prisma.story.createMany({
+		data: [
+			{
+				previewImageUrl:
+					"https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496",
+			},
+			{
+				previewImageUrl:
+					"https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640",
+			},
+			{
+				previewImageUrl:
+					"https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020",
+			},
+			{
+				previewImageUrl:
+					"https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958",
+			},
+			{
+				previewImageUrl:
+					"https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737",
+			},
+			{
+				previewImageUrl:
+					"https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284",
+			},
+		],
+	})
+
+	await prisma.storyItem.createMany({
+		data: [
+			{
+				storyId: 1,
+				sourceUrl: "https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE",
+			},
+			{
+				storyId: 1,
+				sourceUrl: "https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE",
+			},
+			{
+				storyId: 1,
+				sourceUrl: "https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE",
+			},
+			{
+				storyId: 1,
+				sourceUrl: "https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE",
+			},
+			{
+				storyId: 1,
+				sourceUrl: "https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE",
+			},
+		],
 	})
 }
 

@@ -61,6 +61,6 @@ export const useFilters = (): ReturnProps => {
 			setSizes: toggleSizes,
 			setSelectedIngredients: toggleIngredients,
 		}),
-		[sizes, pizzaTypes, selectedIngredients, prices, togglePizzaTypes, toggleSizes, toggleIngredients]
+		[sizes, pizzaTypes, selectedIngredients, prices]
 	)
 }

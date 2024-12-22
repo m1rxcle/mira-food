@@ -1,7 +1,7 @@
-import { Footer } from "@/shared/components/shared/footer"
 import { Header } from "@/shared/components/shared/header"
 
 import type { Metadata } from "next"
+import { Suspense } from "react"
 
 export const metadata: Metadata = {
 	title: "MIRA FOOD | Главная странница",
@@ -19,10 +19,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<main className="min-h-screen">
-			<Header />
+			<Suspense>
+				<Header />
+			</Suspense>
 			{children}
 			{modal}
-			<Footer />
 		</main>
 	)
 }
