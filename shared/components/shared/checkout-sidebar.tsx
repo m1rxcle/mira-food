@@ -18,7 +18,7 @@ export const CheckoutSidebar: React.FC<Props> = ({ loading, totalAmount, classNa
 		<WhiteBlock className={cn("p-6 sticky top-4", className)}>
 			<div className="flex flex-col gap-1">
 				<span className="text-xl">Итого:</span>
-				<span className="text-[34px] font-extrabold">{loading ? <Skeleton className="h-[51px] w-[150px]" /> : totalPrice + "₽"}</span>
+				<span className="text-[34px] font-extrabold">{loading ? <Skeleton className="h-[51px] w-[150px]" /> : totalPrice + " ₽"}</span>
 			</div>
 
 			<CheckoutItemDetails
