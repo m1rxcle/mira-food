@@ -17,7 +17,6 @@ import { Api } from "@/shared/services/api-client"
 
 export default function CheckoutPage() {
 	const { data: session } = useSession()
-
 	const [submitting, setSubmitting] = React.useState(false)
 	const { totalAmount, items, updateItemQuantity, removeCartItem, loading } = useCart()
 	const router = useRouter()
