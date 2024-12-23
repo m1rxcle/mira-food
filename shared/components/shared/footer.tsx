@@ -47,7 +47,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
 						</div>
 					</div>
 					<div className="grid md:grid-cols-3 mb-20 sm:grid-cols-1 sm:text-justify md:text-base ">
-						<div className="flex flex-col sm:items-center md:items-start gap-3 sm:mb-3">
+						<div className="flex flex-col sm:items-center md:items-start gap-3 sm:mb-3 md:mb-0">
 							<h1 className="text-white text-2xl">255 202 212 рублей</h1>
 							<p className="text-neutral-500 w-[280px] ">
 								выручка российской сети в этом мясяце. В прошлом - <span className="underline">8 635 402 120</span> рублей.

@@ -37,7 +37,7 @@ export default async function Home({ searchParams }: { searchParams: GetSearchPa
 					</div>
 				</div>
 			</Container>
-			<Footer />
+			<Footer className="sm:hidden md:block" />
 		</>
 	)
 }
