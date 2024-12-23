@@ -36,9 +36,9 @@ export const ChoosePizzaForm: React.FC<Props> = ({ imageUrl, name, ingredients, 
 	}
 
 	return (
-		<div className={cn("md:flex md:flex-row md:flex-1 sm:flex-col relative", className)}>
-			<PizzaImage imageUrl={imageUrl} size={size} />
-			<div className="md:w-[490px] bg-[#f7f6f5] md:p-7 sm:p-3">
+		<div className={cn("md:flex md:flex-row md:flex-1 sm:flex-col ", className)}>
+			<PizzaImage imageUrl={imageUrl} size={size} className="relative  " />
+			<div className="md:w-[490px] bg-[#f7f6f5] md:p-7 sm:p-3 ">
 				<Title text={`${name}`} size="md" className="font-extrabold mb-1 sm:text-center md:text-start" />
 				<p className="text-gray-400 sm:text-center md:text-start">{textDetails}</p>
 
@@ -47,7 +47,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({ imageUrl, name, ingredients, 
 					<GroupVariants items={PizzaTypes} value={String(type)} onClick={(value) => setType(Number(value) as PizzaType)} />
 				</div>
 
-				<div className="bg-gray-50 p-5 rounded-md md:h-[420px] sm:h-[300px]  overflow-auto scrollbar">
+				<div className="bg-gray-50 p-5 rounded-md md:h-[420px] sm:h-[250px]  overflow-auto scrollbar">
 					<div className="grid grid-cols-3 sm:gap-3 md:gap-3">
 						{ingredients.map((ingredient) => (
 							<IngredientItem
