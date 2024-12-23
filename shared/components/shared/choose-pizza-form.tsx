@@ -36,19 +36,19 @@ export const ChoosePizzaForm: React.FC<Props> = ({ imageUrl, name, ingredients, 
 	}
 
 	return (
-		<div className={cn("flex flex-1", className)}>
+		<div className={cn("md:flex md:flex-row md:flex-1 sm:flex-col", className)}>
 			<PizzaImage imageUrl={imageUrl} size={size} />
-			<div className="w-[490px] bg-[#f7f6f5] p-7">
-				<Title text={`${name} пицца`} size="md" className="font-extrabold mb-1" />
-				<p className="text-gray-400">{textDetails}</p>
+			<div className="md:w-[490px] bg-[#f7f6f5] md:p-7 sm:p-0">
+				<Title text={`${name}`} size="md" className="font-extrabold mb-1 sm:text-center md:text-start" />
+				<p className="text-gray-400 sm:text-center md:text-start">{textDetails}</p>
 
 				<div className="flex flex-col gap-3 mt-5 mb-5">
 					<GroupVariants items={availableSizes} value={String(size)} onClick={(value) => setSize(Number(value) as PizzaSize)} />
 					<GroupVariants items={PizzaTypes} value={String(type)} onClick={(value) => setType(Number(value) as PizzaType)} />
 				</div>
 
-				<div className="bg-gray-50 p-5 rounded-md h-[420px] overflow-auto scrollbar">
-					<div className="grid grid-cols-3 gap-3">
+				<div className="bg-gray-50 p-5 rounded-md md:h-[420px] sm:h-[400px]  overflow-auto scrollbar">
+					<div className="grid md:grid-cols-3 sm:grid-cols-2 sm:gap-3 md:gap-3">
 						{ingredients.map((ingredient) => (
 							<IngredientItem
 								key={ingredient.id}
@@ -62,7 +62,11 @@ export const ChoosePizzaForm: React.FC<Props> = ({ imageUrl, name, ingredients, 
 					</div>
 				</div>
 
-				<Button loading={loading} onClick={handleClickAdd} className="h-[55px] px-10 text-base rounded-[18px] w-full mt-10">
+				<Button
+					loading={loading}
+					onClick={handleClickAdd}
+					className="sm:absolute sm:bottom-0 md:relative h-[55px] px-10 text-base rounded-[18px] w-full mt-10"
+				>
 					Добавить в корзину за {totalPrice} ₽{" "}
 				</Button>
 			</div>

@@ -9,16 +9,16 @@ interface Props {
 }
 export const Footer: React.FC<Props> = ({ className }) => {
 	return (
-		<div className={cn("bg-black/90 h-[650px] w-full", className)}>
+		<div className={cn("bg-black/90 md:h-[650px] sm:h-[450px] w-full", className)}>
 			<div className="w-full h-[40px] bg-primary relative">
 				<Container>
 					<div className="flex justify-center mt-2 items-center gap-10 mb-10">
 						<ChefHat size={40} color="white" />
-						<h1 className="text-white text-xl">Проверьте нашу кухню в Калининграде — мы вас удивим !</h1>
+						<h1 className="text-white md:text-xl sm:text-sm">Проверьте нашу кухню в Калининграде — мы вас удивим !</h1>
 					</div>
-					<div className="flex justify-between items-start gap-32">
-						<div className="grid grid-cols-4  text-md w-[70%]">
-							<div className=" text-white w-[70%]">
+					<div className="flex justify-between items-start gap-32  ">
+						<div className="md:grid sm:hidden md:grid-cols-4 sm:grid-cols-2 sm:gap-2 text-md w-[70%]">
+							<div className=" text-white w-[70%] ">
 								<ul className="text-white">Mira Food</ul>
 								<ul className="text-neutral-500 hover:text-white cursor-pointer">О нас</ul>
 								<ul className="text-neutral-500 hover:text-white cursor-pointer">Mira-книга</ul>
@@ -42,16 +42,18 @@ export const Footer: React.FC<Props> = ({ className }) => {
 								<ul className="text-neutral-500 hover:text-white cursor-pointer">Корпоративные заказы</ul>
 							</div>
 						</div>
-						<div>
+						<div className="sm:hidden md:block">
 							<img src="https://cdn.dodostatic.net/site-static/dist/assets/bdd1b4f711da594de675..png" alt="pizza" width={350} />
 						</div>
 					</div>
-					<div className="grid grid-cols-3 mb-20">
-						<div className="flex flex-col gap-3">
+					<div className="grid md:grid-cols-3 mb-20 sm:grid-cols-1 sm:text-justify md:text-base ">
+						<div className="flex flex-col sm:items-center md:items-start gap-3 sm:mb-3">
 							<h1 className="text-white text-2xl">255 202 212 рублей</h1>
-							<p className="text-neutral-500 w-[280px]">выручка российской сети в этом мясяце. В прошлом - 8 635 402 120 рублей.</p>
+							<p className="text-neutral-500 w-[280px] ">
+								выручка российской сети в этом мясяце. В прошлом - <span className="underline">8 635 402 120</span> рублей.
+							</p>
 						</div>
-						<div className="flex flex-col gap-3">
+						<div className="flex flex-col sm:items-center md:items-start  gap-3">
 							<h1 className="text-white text-2xl">1 181 пиццерия</h1>
 							<p className="text-neutral-500 w-[280px]">в 24 странах, от Великобритании до Нигерии.</p>
 						</div>

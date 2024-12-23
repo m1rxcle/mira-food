@@ -13,7 +13,7 @@ interface Props {
 export const IngredientItem: React.FC<Props> = ({ imageUrl, name, price, active, onClick }) => {
 	return (
 		<div
-			className={cn("flex items-center flex-col p-1 rounded-md w-32 text-center relative cursor-pointer shadow-md bg-white", {
+			className={cn("flex items-center flex-col p-1 rounded-md md:w-32 sm:w-full  text-center relative cursor-pointer shadow-md bg-white", {
 				"border border-primary": active,
 			})}
 			onClick={onClick}

@@ -27,8 +27,8 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({ children,
 	return (
 		<Sheet>
 			<SheetTrigger asChild>{children}</SheetTrigger>
-			<SheetContent className="flex flex-col justify-between pb-0 bg-[#f4f1EE]">
-				<div className={cn("flex flex-col h-full", !totalAmount && "justify-center")}>
+			<SheetContent className="flex flex-col justify-between sm:w-[200px] md:w-[400px]  pb-0    bg-[#f4f1EE]">
+				<div className={cn("flex flex-col h-full ", !totalAmount && "justify-center")}>
 					{totalAmount > 0 && (
 						<SheetHeader>
 							<SheetTitle className={className}>
@@ -41,7 +41,7 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({ children,
 					)}
 
 					{!totalAmount && (
-						<div className="flex flex-col items-center justify-center w-72 mx-auto relative">
+						<div className="flex flex-col items-center justify-center w-72  mx-auto relative">
 							<Image className="mb-5 " width={300} height={300} src={"/assets/images/emptyCart.svg"} alt="empty" />
 							<Title text="Пока тут пусто" className="text-center font-bold text-2xl mb-2" />
 							<p className="text-center  text-neutral-800">Добавьте пиццу. Или две! А мы доставим ваш заказ от 599 ₽</p>
@@ -58,7 +58,7 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({ children,
 						<>
 							<SheetDescription hidden={true} />
 
-							<div className="-mx-6 mt-5 overflow-auto flex-1">
+							<div className="-mx-6 mt-5 overflow-auto flex-1 ">
 								{items.map((item) => (
 									<div className="mb-2" key={item.id}>
 										<CartDrawerItem
@@ -81,7 +81,7 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({ children,
 								</SheetClose>
 							</div>
 
-							<SheetFooter className="-mx-6 bg-white p-8">
+							<SheetFooter className="-mx-6 bg-white md:p-8 sm:p-2">
 								<div className="w-full">
 									<div className="flex mb-4">
 										<span className="flex flex-1 text-lg text-neutral-500">
@@ -91,7 +91,7 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({ children,
 										<span className="font-bold text-lg">{totalAmount} ₽</span>
 									</div>
 									<Link href="/checkout">
-										<Button onClick={() => setRedirecting(true)} loading={redirecting} type="submit" className="w-full h-12 text-base">
+										<Button onClick={() => setRedirecting(true)} loading={redirecting} type="submit" className="w-full h-12 sm:text-sm md:text-base">
 											Оформить заказ
 											<ArrowRight className="w-5 ml-2" />
 										</Button>

@@ -23,9 +23,9 @@ export const CartDrawerItem: React.FC<Props> = ({
 	className,
 }) => {
 	return (
-		<div className={cn("flex bg-white p-5 gap-6", { "opacity-50 pointer-events-none": disabled }, className)}>
-			<CartItem.Image src={imageUrl} />
-			<div className="flex-1">
+		<div className={cn("md:flex-row bg-white md:p-5 md:gap-6 sm:flex sm:flex-col sm:p-3", { "opacity-50 pointer-events-none": disabled }, className)}>
+			<CartItem.Image className="sm:mx-auto md:mx-0" src={imageUrl} />
+			<div className="flex-1 ">
 				<CartItem.Info details={details} name={name} />
 				<hr className="my-3" />
 				<div className="flex items-center justify-between">
