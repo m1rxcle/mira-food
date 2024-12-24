@@ -21,9 +21,9 @@ export default async function ProfilePage() {
 	}
 
 	return (
-		<Container className="flex items-center justify-between">
+		<Container className="flex items-center justify-between ">
 			<ProfileForm data={user} />
-			<img src="/assets/images/update-data.png" alt="update-data" className="w-[500px] h-[500px]" />
+			<img src="/assets/images/update-data.png" alt="update-data" className="w-[500px] h-[500px] md:block sm:hidden" />
 		</Container>
 	)
 }

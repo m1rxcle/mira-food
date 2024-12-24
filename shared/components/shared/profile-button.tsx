@@ -20,7 +20,7 @@ export const ProfileButton: React.FC<Props> = ({ onClickSingIn, className }) => 
 				</Button>
 			) : (
 				<Link href="/profile">
-					<Button variant="outline" className="flex items-center gap-2 ">
+					<Button variant="outline" className="flex items-center md:gap-2 sm:gap-0 ">
 						{session.user?.image ? <img src={session.user?.image} alt="avatar" className="w-6 h-6 rounded-full" /> : <User size={16} />}
 
 						<div className="flex items-center gap-1 text-[15px]">{session.user?.name}</div>

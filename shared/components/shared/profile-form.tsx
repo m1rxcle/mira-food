@@ -52,10 +52,10 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
 	}
 
 	return (
-		<Container className="my-10">
+		<Container className="md:my-10 sm:my-0">
 			<Title text={`Личные данные | ${data.fullName}`} size="md" className="font-bold" />
 			<FormProvider {...form}>
-				<form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5 w-96 mt-10">
+				<form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5 md:w-96 sm:w-full mt-10">
 					<FormInput name="email" label="E-mail" required />
 					<FormInput name="fullName" label="Полное имя" required />
 
