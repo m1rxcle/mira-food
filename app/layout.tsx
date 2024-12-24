@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { Providers } from "@/shared/components/shared/providers"
 import { Nunito } from "next/font/google"
@@ -22,6 +23,7 @@ export default function AppLayout({
 				<Providers>
 					{children}
 					<Analytics />
+					<SpeedInsights />
 				</Providers>
 			</body>
 		</html>
