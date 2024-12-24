@@ -73,16 +73,12 @@ export default function CheckoutPage() {
 		}
 	}
 
-	if (items.length === 0) {
-		return router.push("/", { scroll: false })
-	}
-
 	return (
-		<Container className="mt-10">
-			<Title text="Оформление заказа" className="font-extrabold mb-8 text-[36px]" />
+		<Container className="mt-10 sm:mx-0">
+			<Title text="Оформление заказа" className="font-extrabold mb-8 md:text-[36px] sm:text-[24px]" />
 			<FormProvider {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)}>
-					<div className="flex gap-10">
+					<div className="md:flex md:flex-row sm:flex sm:flex-col md:gap-10 sm:gap-5">
 						{/* Левая часть*/}
 
 						<div className="flex flex-col gap-10 flex-1 mb-20">
@@ -101,7 +97,7 @@ export default function CheckoutPage() {
 
 						{/* Правая часть*/}
 
-						<div className="w-[450px]">
+						<div className="md:w-[450px] sm:w-full">
 							<CheckoutSidebar loading={loading || submitting} totalAmount={totalAmount} />
 						</div>
 					</div>

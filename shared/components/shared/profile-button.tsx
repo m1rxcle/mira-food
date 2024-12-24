@@ -11,8 +11,6 @@ interface Props {
 export const ProfileButton: React.FC<Props> = ({ onClickSingIn, className }) => {
 	const { data: session } = useSession()
 
-	console.log(session, 999)
-
 	return (
 		<div className={className}>
 			{!session ? (

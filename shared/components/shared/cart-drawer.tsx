@@ -7,7 +7,6 @@ import { ArrowRight, X } from "lucide-react"
 import { CartDrawerItem } from "./cart-drawer-item"
 import { getCartItemDetails } from "@/shared/lib/get-cart-item-details"
 import { PizzaSize, PizzaType } from "@/shared/constans/pizza"
-import Image from "next/image"
 import { Title } from "./title"
 import { cn } from "@/shared/lib/utils"
 import { useCart } from "@/shared/hooks"
@@ -41,23 +40,27 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({ children,
 					)}
 
 					{!totalAmount && (
-						<div className="flex flex-col items-center justify-center w-72  mx-auto relative">
-							<Image className="mb-5 " width={300} height={300} src={"/assets/images/emptyCart.svg"} alt="empty" />
-							<Title text="Пока тут пусто" className="text-center font-bold text-2xl mb-2" />
-							<p className="text-center  text-neutral-800">Добавьте пиццу. Или две! А мы доставим ваш заказ от 599 ₽</p>
+						<>
+							<SheetTitle hidden={true} />
+							<SheetDescription hidden={true} />
+							<div className="flex flex-col items-center justify-center md:w-72 sm:w-[170px]  mx-auto relative">
+								<img className="mb-5 md:w-[300px] md:h-[300px] sm:w-[200px] sm:h-[200px]" src={"/assets/images/emptyCart.svg"} alt="empty" />
+								<Title text="Пока тут пусто" className="text-center font-bold text-2xl mb-2" />
+								<p className="text-center  text-neutral-800">Добавьте пиццу. Или две! А мы доставим ваш заказ от 599 ₽</p>
 
-							<SheetClose>
-								<Button className="absolute top-1/2 -left-24  p-0 transition-all duration-500 ease-in-out hover:rotate-180" variant={"link"}>
-									<X color="white" size={40} />
-								</Button>
-							</SheetClose>
-						</div>
+								<SheetClose asChild>
+									<Button className="absolute top-1/2 -left-24  p-0 transition-all duration-500 ease-in-out hover:rotate-180" variant={"link"}>
+										<X color="white" size={40} />
+									</Button>
+								</SheetClose>
+							</div>
+						</>
 					)}
 
 					{totalAmount > 0 && (
 						<>
 							<SheetDescription hidden={true} />
-
+							<SheetTitle hidden={true} />
 							<div className="-mx-6 mt-5 overflow-auto flex-1 ">
 								{items.map((item) => (
 									<div className="mb-2" key={item.id}>
@@ -74,7 +77,7 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({ children,
 										/>
 									</div>
 								))}
-								<SheetClose>
+								<SheetClose asChild>
 									<Button className="absolute top-[51.3%] -left-12  p-0 transition-all duration-500 ease-in-out hover:rotate-180" variant={"link"}>
 										<X color="white" size={40} />
 									</Button>
