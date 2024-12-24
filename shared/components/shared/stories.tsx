@@ -36,17 +36,17 @@ export const Stories: React.FC<Props> = ({ className }) => {
 
 	return (
 		<>
-			<Container className={cn("sm:w-[50px] md:w-full sm:flex sm:items-center sm:justify-between sm:gap-1 md:gap-2 md:my-10", className)}>
+			<Container className={cn("sm:w-[100px] md:w-full sm:flex sm:items-center sm:justify-between sm:gap-1 md:gap-2 md:my-10", className)}>
 				{stories.length === 0 &&
-					[...Array(6)].map((_, index) => <div key={index} className="w-[200px] h-[250px] bg-gray-200 rounded-md animate-pulse" />)}
+					[...Array(6)].map((_, index) => (
+						<div key={index} className="md:w-[200px] md:h-[250px] sm:w-[50px] sm:h-[50px] bg-gray-200 rounded-md animate-pulse" />
+					))}
 
 				{stories.map((story) => (
 					<img
 						key={story.id}
 						onClick={() => onClickStory(story)}
-						className="rounded-md cursor-pointer"
-						height={250}
-						width={200}
+						className="rounded-md cursor-pointer md:w-[200px] md:h-[250px] sm:w-[70px] sm:h-[100px] object-cover"
 						src={story.previewImageUrl}
 						alt="logo"
 					/>
