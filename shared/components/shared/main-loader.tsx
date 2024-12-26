@@ -12,7 +12,7 @@ export const MainLoader: React.FC<PropsWithChildren<Props>> = ({ children, class
 	React.useEffect(() => {
 		setTimeout(() => {
 			setIsLoading(false)
-		}, 5000)
+		}, 2000)
 	}, [])
 	return (
 		<div className={cn("min-h-screen", className)}>
