@@ -1,5 +1,4 @@
 import { Header } from "@/shared/components/shared/header"
-import { MainLoader } from "@/shared/components/shared/main-loader"
 
 import type { Metadata } from "next"
 import { Suspense } from "react"
@@ -19,14 +18,12 @@ export default function RootLayout({
 	modal: React.ReactNode
 }>) {
 	return (
-		<MainLoader>
-			<main className="min-h-screen">
-				<Suspense>
-					<Header />
-				</Suspense>
-				{children}
-				{modal}
-			</main>
-		</MainLoader>
+		<main className="min-h-screen">
+			<Suspense>
+				<Header />
+			</Suspense>
+			{children}
+			{modal}
+		</main>
 	)
 }
